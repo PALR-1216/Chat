@@ -8,6 +8,7 @@ do {
 
 textarea.addEventListener('keyup', (e) => {
     if(e.key === 'Enter') {
+        
         sendMessage(e.target.value)
     }
 })
@@ -18,6 +19,7 @@ function sendMessage(message) {
         message: message.trim()
     }
     // Append 
+    
     appendMessage(msg, 'outgoing')
     textarea.value = ''
     scrollToBottom()
@@ -42,7 +44,6 @@ function appendMessage(msg, type) {
 
 // Recieve messages 
 socket.on('message', (msg) => {
-    console.log(msg)
     appendMessage(msg, 'incoming')
     
     scrollToBottom()
