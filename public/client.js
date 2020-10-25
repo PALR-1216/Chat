@@ -7,9 +7,12 @@ do {
 } while(!name)
 
 textarea.addEventListener('keyup', (e) => {
-    if(e.key === 'Enter') {
-        
-        sendMessage(e.target.value)
+    if(textarea != ""){
+
+        if(e.key === 'Enter') {
+            
+            sendMessage(e.target.value)
+        }
     }
 })
 
