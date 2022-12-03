@@ -6,8 +6,10 @@ do {
     name = prompt('Please enter your name: ')
 } while(!name)
 
+
 textarea.addEventListener('keyup', (e) => {
     if(textarea != ""){
+        console.log("hello world")
 
         if(e.key === 'Enter') {
             
