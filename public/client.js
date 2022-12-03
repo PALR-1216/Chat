@@ -9,8 +9,7 @@ do {
 
 textarea.addEventListener('keyup', (e) => {
     if(textarea != ""){
-        console.log("hello world")
-
+       
         if(e.key === 'Enter') {
             
             sendMessage(e.target.value)
@@ -53,6 +52,7 @@ socket.on('message', (msg) => {
     
     scrollToBottom()
 })
+
 
 function scrollToBottom() {
     messageArea.scrollTop = messageArea.scrollHeight
