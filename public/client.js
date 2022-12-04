@@ -3,17 +3,21 @@ let name;
 let textarea = document.querySelector('#textarea')
 // let message = document.querySelector("#message")
 let messageArea = document.querySelector('.message__area')
-let userList = document.querySelector("#user_List");
 
 let usersConnected = []
 do {
     name = prompt('Please enter your name: ')
 } while(!name)
 
+//send userName to server
+socket.emit('UserName', name)
+
 textarea.addEventListener('keyup', (e) => {
     //only send message when input is not empty
     if(e.key === 'Enter') {
         sendMessage(e.target.value)
+
+        
     }
 })
 
@@ -58,11 +62,27 @@ function appendMessage(msg, type) {
     
 }
 
+
+function addUserList(users) {
+    var li = document.createElement('li')
+    li.innerHTML = users
+    document.getElementById('user_List').appendChild(li)
+
+}
+
 // Recieve messages 
 socket.on('message', (msg) => {
     appendMessage(msg, 'incoming')
     scrollToBottom()
 })
+
+socket.on("userList", (users) =>{
+    addUserList(users)
+        
+})
+
+
+
 
 function scrollToBottom() {
     messageArea.scrollTop = messageArea.scrollHeight

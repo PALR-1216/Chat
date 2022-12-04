@@ -1,5 +1,6 @@
 const {socket} = require('socket.io');
 const express = require('express');
+const { lchownSync } = require('fs');
 const app = express();
 const http  = require('http').createServer(app);
 let users = []
@@ -28,12 +29,22 @@ io.on('connection', (socket) =>{
         console.log(msg)
         // users.push(msg.user)
         // console.log(users)
+        
     })
 
-    socket.on('listUsers', (users) =>{
-        var total=io.engine.clientsCount;
-        console.log(total)
+    socket.on('disconnect', () =>{
+        console.log("user left")
+        
     })
+
+    socket.on('UserName', (user) =>{
+        console.log(`User ${user} has Connected`)
+        users.push(user)
+        console.log(users)
+
+        socket.emit("userList", users)
+    })
+
 })
 
 
