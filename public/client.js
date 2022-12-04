@@ -64,6 +64,7 @@ function appendMessage(msg, type) {
 
 
 function addUserList(users) {
+    //create elelemt to add to list of connected users
     var li = document.createElement('li')
     li.innerHTML = users
     document.getElementById('user_List').appendChild(li)
@@ -78,7 +79,7 @@ socket.on('message', (msg) => {
 
 socket.on("userList", (users) =>{
     addUserList(users)
-        
+    
 })
 
 
