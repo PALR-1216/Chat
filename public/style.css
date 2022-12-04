@@ -48,6 +48,7 @@ textarea {
     font-size: 16px;
     outline: none;
     background: #FBFBFB;
+    resize: none;   
 }
 
 .message {
@@ -73,6 +74,41 @@ textarea {
     color: #333;
     font-size: 14px;
 }
+
+.Users_Message_Area {
+    background-color: #E8E9EB;
+    padding: 10px;
+    display: inline-block;
+    width: 100%;
+}
+
+.Users_Message_Area input{
+    width: 100%;
+    color: #979797;
+    height: 28px;
+    padding-left: 10px;
+    text-decoration: none;
+    background-repeat: repeat-x;
+    border:1px solid #777;
+    border-radius:5px
+}
+
+.users_Connected {
+    /* background-color: red; */
+    height: 600px;
+    padding-left: 20px;
+}
+
+.users_Connected .user_List{
+    
+    padding-top: 40px;
+
+}
+
+/* .Users_Message_Area  #send_Message_Button{
+    border-radius: 5px;
+} */
+
 
 @media only screen and (max-width: 600px){
 

@@ -2,6 +2,7 @@ const {socket} = require('socket.io');
 const express = require('express');
 const app = express();
 const http  = require('http').createServer(app);
+let users = []
 
 const PORT = process.env.PORT || 3000;
 
@@ -25,5 +26,7 @@ io.on('connection', (socket) =>{
         
         socket.broadcast.emit('message',msg)
         console.log(msg)
+        // users.push(msg.user)
+        // console.log(users)
     })
 })

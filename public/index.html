@@ -9,6 +9,7 @@
 </head>
 
 <body>
+  
     <section class="chat__section">
         <div class="brand">
     
@@ -18,9 +19,27 @@
         <div class="Users"></div>
         <div class="message__area"></div>
         <div>
-            <textarea id="textarea" cols="30" rows="1" placeholder="Write a message..."></textarea>
+            <textarea id="textarea"  cols="1" rows="1" placeholder="Write a message..."></textarea>
+
+            <!-- <div class="Users_Message_Area">
+                <input type="text" id="message" placeholder="Enter Message">
+                <button type="submit" id="send_Message_Button">Send</button>
+            </div> -->
+            
         </div>
     </section>
+
+    <div class="users_Connected">
+        <h1>Users Connected</h1>
+
+        <div>
+            <ul class="user_List" id="user_List">
+                
+            </ul>
+        </div>
+       
+
+    </div>
     <script src="/socket.io/socket.io.js"></script>
     <script src="/client.js"></script>
 </body>
