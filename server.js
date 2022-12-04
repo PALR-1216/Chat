@@ -29,4 +29,11 @@ io.on('connection', (socket) =>{
         // users.push(msg.user)
         // console.log(users)
     })
+
+    socket.on('listUsers', (users) =>{
+        var total=io.engine.clientsCount;
+        console.log(total)
+    })
 })
+
+
