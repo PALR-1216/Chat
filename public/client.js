@@ -70,9 +70,6 @@ function addUserList(users) {
     console.log(users)
     li.innerHTML =  users
     document.getElementById('user_List').appendChild(li)
-    return 
-
-
 }
 
 // Recieve messages 
